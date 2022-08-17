@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
   
   root "pages#index"
+
+  get 'user/:id', to: 'users#show', as: 'user'
 end
