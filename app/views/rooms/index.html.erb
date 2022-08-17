@@ -1,6 +1,6 @@
   <h4><%= current_user.email %></h4>
 
-  <h3>Users list</h3>
+  <h3>User</h3>
   <%= turbo_stream_from 'users' %>
   <div id='users'>
     <%= render @users %>

@@ -5,7 +5,16 @@ class RoomsController < ApplicationController
     @room = Room.new
     @rooms = Room.public_rooms
 
+    @users = User.all_except(current_user)
+  end
+
+  def show
     @single_room = Room.find(params[:id]) # показывает приватную комнату
+    @room = Room.new
+    @rooms = Room.public_rooms
+
+    @message = Message.new
+    @message = @single_room.messages.order(created_at: :asc)
 
     @users = User.all_except(current_user)
   end
