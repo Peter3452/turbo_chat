@@ -1,13 +1,17 @@
 <div>
   <h4><%= current_user.email %></h4>
 
-  <h3>Users</h3>
+  <h3>Users list</h3>
   <%= turbo_stream_from 'users' %>
-  <%= render @users %>
+  <div id='users'>
+    <%= render @users %>
+  </div>
 
-  <h3>Rooms</h3>
+  <h3>Rooms list</h3>
   <%= turbo_stream_from 'rooms' %>
-  <%= render @rooms %>
+  <div id='rooms'>
+    <%= render @rooms %>
+  </div>
   
   <%= render 'layouts/new_room_form' %>
 </div>

@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! # создание комнаты, отображение списка всех комнат и пользователей кроме скоупов!
 
   def index
     @room = Room.new
@@ -8,10 +8,10 @@ class RoomsController < ApplicationController
   end
 
   def create 
-    @room = room.create(room_params)
+    @room = Room.create(room_params)
   end
 
-    def room_params
-      params.require(:room).permit(:name)
-    end
+  def room_params
+    params.require(:room).permit(:name)
+  end
 end
