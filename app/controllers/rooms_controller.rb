@@ -6,6 +6,8 @@ class RoomsController < ApplicationController
     @rooms = Room.public_rooms
 
     @users = User.all_except(current_user)
+
+    render 'index'
   end
 
   def show
@@ -17,6 +19,8 @@ class RoomsController < ApplicationController
     @message = @single_room.messages.order(created_at: :asc)
 
     @users = User.all_except(current_user)
+
+    render 'index'
   end
 
   def create 
